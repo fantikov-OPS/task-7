@@ -4,8 +4,6 @@ def print_name(name):
     
 names = ['Vasa', 'Petya', 'Kolya', 'Tola', 'Ola']
 
-for name in names:
-    print_name(name)
 
 def make_marx(num_el, num_row):
     matrix = []
@@ -101,7 +99,6 @@ def search_fact(n):
 
 res = search_fact(3)
 
-print(res)
 
 def matr_def_num(n, randon_from=1, random_to=9):
     matrx = []
@@ -124,4 +121,28 @@ def sum_args(*args):
     return summ
 
 
+def sum_max_task(*args):
+    summ = 0
+    maxx = args[0]
+    for el in args:
+        summ+=el
+        if el > maxx:
+            maxx = el
+    return summ, maxx
+
+
+def test_2(*args, **kwrags):
+    print(type(kwrags))
+    print(kwrags)
+    print(args)
+    for key, val in kwrags.items():
+        print(f'key -- {key}, val -- {val}')
         
+
+def search_key(**kwargs):
+    for key, val in kwargs.items():
+        if len(key)%2==0:
+            print(f'key - {key} val - {val}')
+            
+            
+search_key(asd=4, aw=2, asdfg=5)
