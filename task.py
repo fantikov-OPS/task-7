@@ -93,5 +93,35 @@ def make_and_print_search_max_min_matrix(num_el, num_row, start_num, end_num, se
     print(f'sum - {summ}')
     return matrix, vall, summ
 
+def search_fact(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
 
-matrx, val, summ = make_and_print_search_max_min_matrix(num_el=2, num_row=3, start_num=1, end_num=20, search_max=True)
+res = search_fact(3)
+
+print(res)
+
+def matr_def_num(n, randon_from=1, random_to=9):
+    matrx = []
+    for row in range(n[0]):
+        row = []
+        for el in range(n[1]):
+            row.append(randint(randon_from, random_to))
+        matrx.append(row)
+    print(matrx)
+    return matrx
+
+def test(*args):
+    print(args)
+    
+def sum_args(*args):
+    summ = 0
+    for i, v in enumerate(args):
+        summ+= v*i
+    print(summ)
+    return summ
+
+
+        
